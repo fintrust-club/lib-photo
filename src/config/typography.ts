@@ -1,0 +1,14 @@
+export const COLORS = {
+  SILVER_MEDAL: "#D6D6D6",
+  LILAC_FIELDS: "#90919B",
+  PLACEBO_BLUE: "#EFF3FD",
+  WHITE: "#FFFFFF",
+  RETRO_BLUE: "#2E62F3",
+  LIGHTISH_BLUE: "#407BFF",
+  NIMBUS_BLUE: "#4227FD",
+
+  TEXT: {
+    PRIMARY: "#4E5065",
+    LIGHT: "#B4B4B4",
+  },
+};
