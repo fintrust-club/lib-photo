@@ -40,22 +40,34 @@ import {
 import { CONFIG } from "src/config";
 
 const FIREBASE_CONFIG_PROD = {
-  apiKey: "AIzaSyDfDSxBZ8goNR-UooP6VlDKNSTS7Z2m-Bw",
-  authDomain: "buzbridge-3200f.firebaseapp.com",
-  projectId: "buzbridge-3200f",
-  storageBucket: "buzbridge-3200f.appspot.com",
-  messagingSenderId: "181224636864",
-  appId: "1:181224636864:web:b499f86d45cf5809314825",
-  measurementId: "G-60JNCZE7V4",
+  // apiKey: "AIzaSyDfDSxBZ8goNR-UooP6VlDKNSTS7Z2m-Bw",
+  // authDomain: "buzbridge-3200f.firebaseapp.com",
+  // projectId: "buzbridge-3200f",
+  // storageBucket: "buzbridge-3200f.appspot.com",
+  // messagingSenderId: "181224636864",
+  // appId: "1:181224636864:web:b499f86d45cf5809314825",
+  // measurementId: "G-60JNCZE7V4",
+  apiKey: "AIzaSyBI6MGKhqfB7ujbZ-LEO5gMeLJ5SSCtQjs",
+  authDomain: "esp32-9461f.firebaseapp.com",
+  projectId: "esp32-9461f",
+  storageBucket: "esp32-9461f.firebasestorage.app",
+  messagingSenderId: "999612225979",
+  appId: "1:999612225979:web:7bd3de27bf15fe907b0c9e",
 };
 
 const FIREBASE_CONFIG_DEV = {
-  apiKey: "AIzaSyCo1g9UzsYKk3TNxUDg3JGFiD9jdmwRac0",
-  authDomain: "buzbridge-41dde.firebaseapp.com",
-  projectId: "buzbridge-41dde",
-  storageBucket: "buzbridge-41dde.appspot.com",
-  messagingSenderId: "314597116560",
-  appId: "1:314597116560:web:5102eac4f0274eda696615",
+  // apiKey: "AIzaSyCo1g9UzsYKk3TNxUDg3JGFiD9jdmwRac0",
+  // authDomain: "buzbridge-41dde.firebaseapp.com",
+  // projectId: "buzbridge-41dde",
+  // storageBucket: "buzbridge-41dde.appspot.com",
+  // messagingSenderId: "314597116560",
+  // appId: "1:314597116560:web:5102eac4f0274eda696615",
+  apiKey: "AIzaSyBI6MGKhqfB7ujbZ-LEO5gMeLJ5SSCtQjs",
+  authDomain: "esp32-9461f.firebaseapp.com",
+  projectId: "esp32-9461f",
+  storageBucket: "esp32-9461f.firebasestorage.app",
+  messagingSenderId: "999612225979",
+  appId: "1:999612225979:web:7bd3de27bf15fe907b0c9e",
 };
 
 const firebaseConfig = CONFIG.isDevelopment
