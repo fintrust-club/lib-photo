@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Pagination } from "antd";
+import { Pagination, Select } from "antd";
+import { useNavigate } from "react-router-dom";
 import {
   getStorage,
   ref,
@@ -9,10 +10,14 @@ import {
 } from "firebase/storage";
 import "./Gallery.css";
 
+const { Option } = Select;
+
 const GalleryPage = () => {
   const [images, setImages] = useState<any[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [sortOrder, setSortOrder] = useState("latest"); // State for sort order
   const itemsPerPage = 15;
+  const navigate = useNavigate();
 
   const fetchImages = async () => {
     try {
@@ -44,10 +49,26 @@ const GalleryPage = () => {
     setCurrentPage(page);
   };
 
-  const paginatedImages = images.slice(
+  const handleSortChange = (value: string) => {
+    setSortOrder(value);
+  };
+
+  // Sort images based on selected order
+  const sortedImages = [...images].sort((a, b) => {
+    const dateA = new Date(a.meta.updated).getTime();
+    const dateB = new Date(b.meta.updated).getTime();
+
+    return sortOrder === "latest" ? dateB - dateA : dateA - dateB;
+  });
+
+  const paginatedImages = sortedImages.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
+
+  const handleImageClick = (image: any) => {
+    navigate("/photoview", { state: image });
+  };
 
   return (
     <div
@@ -59,6 +80,21 @@ const GalleryPage = () => {
         flexDirection: "column",
       }}
     >
+      {/* Heading */}
+      <h1 style={{ textAlign: "center", marginBottom: "16px" }}>My Days</h1>
+
+      {/* Sorting Dropdown */}
+      <div style={{ marginBottom: "16px", textAlign: "center" }}>
+        <Select
+          defaultValue="latest"
+          style={{ width: 200 }}
+          onChange={handleSortChange}
+        >
+          <Option value="latest">Latest to Oldest</Option>
+          <Option value="oldest">Oldest to Latest</Option>
+        </Select>
+      </div>
+
       <div
         className="gallery-container"
         style={{
@@ -70,7 +106,11 @@ const GalleryPage = () => {
         }}
       >
         {paginatedImages.map((item) => (
-          <div key={item.id} className="image-wrapper">
+          <div
+            key={item.id}
+            className="image-wrapper"
+            onClick={() => handleImageClick(item)} // Navigate on click
+          >
             <img src={item.url} alt={item.title} />
             <div className="overlay">
               <h3>{item.title}</h3>

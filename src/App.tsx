@@ -6,6 +6,7 @@ import Gallery from "./pages/gallery";
 import { Spin } from "antd";
 import { createStyle } from "./utils/style";
 import { CONFIG } from "./config";
+import PhotoPreview from "./pages/Photo_view";
 
 const Loader = () => {
   return (
@@ -37,6 +38,7 @@ export default function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route path="/home" element={<Gallery />} />
+        <Route path="/photoview" element={<PhotoPreview />} />
 
         <Route
           path="*"

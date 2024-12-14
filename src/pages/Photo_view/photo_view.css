@@ -1,0 +1,81 @@
+/* Parent Container */
+.photo-preview-container {
+    padding: 24px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: #f8f9fa; /* Light background */
+    color: #333; /* Text color */
+  }
+  
+  /* Header */
+  .photo-preview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  
+  .back-button {
+    background-color: #007bff; /* Blue button */
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .photo-preview-header h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  /* Content */
+  .photo-preview-content {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Image */
+  .photo-preview-image {
+    max-width: 60%;
+    max-height: 80%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+  }
+  
+  /* Details Section */
+  .photo-details {
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .photo-details p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .photo-details strong {
+    color: #555;
+  }
+  
